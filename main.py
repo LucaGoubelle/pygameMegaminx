@@ -1,5 +1,7 @@
 """ entry point """
 import sys;sys.dont_write_bytecode=True
+
+from megaminx_scrambler import MegaminxScrambler
 import pygame
 
 from megaminx import Megaminx
@@ -15,6 +17,7 @@ bgcolor = (32,32,32)
 minx = Megaminx(full=True)
 minx_drawer = MegaminxDrawer()
 minx_mover = Mover()
+minx_scrambler = MegaminxScrambler()
 # -----------------------
 
 while True:
@@ -33,6 +36,8 @@ while True:
                 minx = minx_mover.simpleMove(minx, "F'") if event.mod & pygame.KMOD_SHIFT else minx_mover.simpleMove(minx, "F")
             if event.key == pygame.K_d:
                 minx = minx_mover.simpleMove(minx, "DL'") if event.mod & pygame.KMOD_SHIFT else minx_mover.simpleMove(minx, "DL")
+            if event.key == pygame.K_SPACE:
+                minx = minx_scrambler.getScrambledMegaminx(minx_mover, minx)
         
         screen.fill(bgcolor)
         #------------------------------

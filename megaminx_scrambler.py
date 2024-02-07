@@ -21,18 +21,18 @@ class MegaminxScrambler:
     def getAllMoves(s):
         return s.split()
     
-    def scrambleMegaminx(minx, mv, scramble):
+    def scrambleMegaminx(minx, mover, scramble):
         scrambleLst = MegaminxScrambler.getAllMoves(scramble)
         for mv in scrambleLst:
             match mv:
-                case "U": minx = mv.simpleMove(minx, "U")
-                case "U'": minx = mv.simpleMove(minx, "U")
-                case "D--": minx = mv.simpleMove(minx, "D--")
-                case "D++": minx = mv.simpleMove(minx, "D++")
-                case "R--": minx = mv.simpleMove(minx, "R--")
-                case "R++": minx = mv.simpleMove(minx, "R++")
+                case "U": minx = mover.simpleMove(minx, "U")
+                case "U'": minx = mover.simpleMove(minx, "U")
+                case "D--": minx = mover.simpleMove(minx, "D--")
+                case "D++": minx = mover.simpleMove(minx, "D++")
+                case "R--": minx = mover.simpleMove(minx, "R--")
+                case "R++": minx = mover.simpleMove(minx, "R++")
         return minx
     
-    def getScrambledMegaminx(self, minx):
+    def getScrambledMegaminx(self, mv, minx):
         randomScramble = self.scrambleList[randint(0,len(self.scrambleList)-1)]
-        return MegaminxScrambler.scrambleMegaminx(minx, randomScramble)
+        return MegaminxScrambler.scrambleMegaminx(minx, mv, randomScramble)

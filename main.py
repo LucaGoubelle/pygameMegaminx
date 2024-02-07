@@ -1,5 +1,5 @@
 """ entry point """
-import sys
+import sys;sys.dont_write_bytecode=True
 import pygame
 
 from megaminx import Megaminx

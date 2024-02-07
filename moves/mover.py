@@ -6,6 +6,7 @@ from moves.axis_moves import *
 from moves.back_moves import *
 from moves.abs_moves import *
 from moves.down_moves import *
+from moves.scramble_moves import *
 
 class Mover:
     """ mover """
@@ -48,6 +49,10 @@ class Mover:
             case "AR": minx = move_AR(minx)
             case "AR'": minx = move_AR_prime(minx)
             case "AR2": minx = move_AR2(minx)
+            case "R++": minx = move_RPP(minx)
+            case "R--": minx = move_RMM(minx)
+            case "D++": minx = move_DPP(minx)
+            case "D--": minx = move_DMM(minx)
         return minx
     
     def multiMove(self, scr, minx, md, s, delay=200):

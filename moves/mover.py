@@ -1,7 +1,7 @@
 """ mover """
 import pygame
 
-from moves.std_moves import *
+from moves.std_moves.std_moves import *
 from moves.axis_moves import *
 from moves.back_moves import *
 from moves.abs_moves import *

@@ -1,10 +1,9 @@
 """ entry point """
 import sys;sys.dont_write_bytecode=True
-
-from megaminx_scrambler import MegaminxScrambler
 import pygame
 
 from megaminx import Megaminx
+from megaminx_scrambler import MegaminxScrambler
 from megaminx_drawer import MegaminxDrawer
 from moves.mover import Mover
 
@@ -48,6 +47,12 @@ while True:
 
                 case pygame.K_SPACE:
                     minx = minx_scrambler.getScrambledMegaminx(minx_mover, minx)
+                case pygame.K_1:
+                    minx = minx_mover.multiMove(screen, minx, minx_drawer, "R U R' U'")
+                case pygame.K_2:
+                    minx = minx_mover.multiMove(screen, minx, minx_drawer, "U R U' R'")
+                case pygame.K_3:
+                    minx = minx_mover.multiMove(screen, minx, minx_drawer, "R U R'")
 
         screen.fill(bgcolor)
         #------------------------------

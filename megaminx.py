@@ -8,7 +8,7 @@ class Megaminx:
             self.up = ["gray" for _ in range(11)]
             self.front = ["magenta" for _ in range(11)]
             self.left = ["green" for _ in range(11)]
-            self.right = ["beige" for _ in range(11)]
+            self.right = ["bisque" for _ in range(11)]
             self.downRight = ["red" for _ in range(11)]
             self.downLeft = ["blue" for _ in range(11)]
             self.absLeft = ["yellow" for _ in range(11)]

@@ -3,9 +3,9 @@ import pygame
 
 from moves.std_moves.std_moves import *
 from moves.axis_moves import *
-from moves.back_moves import *
-from moves.abs_moves import *
-from moves.down_moves import *
+from moves.other_moves.back_moves import *
+from moves.other_moves.abs_moves import *
+from moves.other_moves.down_moves import *
 from moves.scramble_moves import *
 
 class Mover:

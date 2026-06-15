@@ -17,10 +17,12 @@ class MegaminxScrambler:
             "R++ D++ R-- D++ R-- D-- R-- D++ R-- D-- U' R++ D-- R++ D++ R-- D++ R++ D-- R-- D-- U' D-- R-- D++ R-- D-- R-- D++ R-- D-- R-- U' D++ R-- D++ R++ D-- R++ D++ R-- D++ R++ U' R-- D-- R++ D++ R-- D-- R-- D++ R++ D++ U' D-- R-- D-- R++ D++ R++ D-- R++ D-- R-- U' D++ R-- D++ R-- D++ R++ D++ R-- D-- R-- U'",
             "D-- R-- D-- R-- D++ R++ D++ R++ D-- R++ U D-- R++ D-- R++ D-- R++ D-- R-- D-- R++ U' R-- D++ R++ D++ R++ D++ R-- D++ R-- D++ U' D-- R-- D-- R-- D++ R++ D++ R++ D++ R++ U D++ R-- D++ R-- D++ R++ D++ R-- D-- R-- U' R-- D++ R++ D++ R++ D-- R++ D-- R++ D-- U D++ R-- D-- R-- D-- R++ D-- R-- D++ R-- U"
         ]
-        
+    
+    @staticmethod
     def getAllMoves(s):
         return s.split()
     
+    @staticmethod
     def scrambleMegaminx(minx, mover, scramble):
         scrambleLst = MegaminxScrambler.getAllMoves(scramble)
         for mv in scrambleLst:

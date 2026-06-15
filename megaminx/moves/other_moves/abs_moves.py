@@ -1,6 +1,6 @@
 """ abs moves """
-from megaminx import Megaminx
-from moves.utils import FaceUtils
+from megaminx.megaminx import Megaminx
+from megaminx.moves.utils import FaceUtils
 
 def move_AL(minx):
     u = FaceUtils.transfert(minx.up)

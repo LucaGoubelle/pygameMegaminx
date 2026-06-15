@@ -1,6 +1,7 @@
 """ utils """
 
 class FaceUtils:
+    
     @staticmethod
     def rotate(face):
         nf = [None for _ in range(len(face))]

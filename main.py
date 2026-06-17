@@ -2,10 +2,7 @@
 import sys;sys.dont_write_bytecode=True
 import pygame
 
-from megaminx.megaminx import Megaminx
-from megaminx.megaminx_scrambler import MegaminxScrambler
-from megaminx.megaminx_drawer import MegaminxDrawer
-from megaminx.moves.mover import Mover
+from megaminx import Megaminx, MegaminxScrambler, MegaminxDrawer, Mover
 
 pygame.init()
 clock = pygame.time.Clock()

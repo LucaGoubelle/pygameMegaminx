@@ -2,11 +2,11 @@
 import pygame
 
 from megaminx.moves.std_moves.std_moves import *
-from megaminx.moves.axis_moves import *
+from megaminx.moves.other_moves.axis_moves import *
 from megaminx.moves.other_moves.back_moves import *
 from megaminx.moves.other_moves.abs_moves import *
 from megaminx.moves.other_moves.down_moves import *
-from megaminx.moves.scramble_moves import *
+from megaminx.moves.other_moves.scramble_moves import *
 
 class Mover:
     """ mover """

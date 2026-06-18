@@ -18,23 +18,13 @@ class MegaminxScrambler:
             "D-- R-- D-- R-- D++ R++ D++ R++ D-- R++ U D-- R++ D-- R++ D-- R++ D-- R-- D-- R++ U' R-- D++ R++ D++ R++ D++ R-- D++ R-- D++ U' D-- R-- D-- R-- D++ R++ D++ R++ D++ R++ U D++ R-- D++ R-- D++ R++ D++ R-- D-- R-- U' R-- D++ R++ D++ R++ D-- R++ D-- R++ D-- U D++ R-- D-- R-- D-- R++ D-- R-- D++ R-- U"
         ]
     
-    @staticmethod
-    def getAllMoves(s):
-        return s.split()
-    
-    @staticmethod
-    def scrambleMegaminx(minx, mover, scramble):
-        scrambleLst = MegaminxScrambler.getAllMoves(scramble)
+    def scrambleMegaminx(self, minx, mover, scramble):
+        scrambleLst = scramble.split()
         for mv in scrambleLst:
-            match mv:
-                case "U": minx = mover.simpleMove(minx, "U")
-                case "U'": minx = mover.simpleMove(minx, "U")
-                case "D--": minx = mover.simpleMove(minx, "D--")
-                case "D++": minx = mover.simpleMove(minx, "D++")
-                case "R--": minx = mover.simpleMove(minx, "R--")
-                case "R++": minx = mover.simpleMove(minx, "R++")
+            minx = mover.simpleMove(minx, mv)
         return minx
     
     def getScrambledMegaminx(self, mv, minx):
-        randomScramble = self.scrambleList[randint(0,len(self.scrambleList)-1)]
-        return MegaminxScrambler.scrambleMegaminx(minx, mv, randomScramble)
+        rand: int = randint(0,len(self.scrambleList)-1)
+        randomScramble = self.scrambleList[rand]
+        return self.scrambleMegaminx(minx, mv, randomScramble)

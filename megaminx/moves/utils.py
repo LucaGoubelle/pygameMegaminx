@@ -1,10 +1,15 @@
 """ utils """
 
 class FaceUtils:
+    """ face utils """
+
+    @staticmethod
+    def gen_empty_face() -> list[str]:
+        return ["" for _ in range(11)]
     
     @staticmethod
-    def rotate(face):
-        nf = [None for _ in range(len(face))]
+    def rotate(face) -> list[str]:
+        nf = FaceUtils.gen_empty_face()
         
         nf[0] = face[8]
         nf[1] = face[9]
@@ -22,8 +27,8 @@ class FaceUtils:
         return nf
     
     @staticmethod
-    def rotateAsync(face):
-        nf = [None for _ in range(len(face))]
+    def rotateAsync(face) -> list[str]:
+        nf = FaceUtils.gen_empty_face()
         
         nf[0] = face[2]
         nf[1] = face[3]
@@ -41,30 +46,30 @@ class FaceUtils:
         return nf
     
     @staticmethod
-    def rotateTwice(face):
+    def rotateTwice(face) -> list[str]:
         nf = FaceUtils.rotate(face)
         return FaceUtils.rotate(nf)
     
     @staticmethod
-    def rotateTwiceAsync(face):
+    def rotateTwiceAsync(face) -> list[str]:
         nf = FaceUtils.rotateAsync(face)
         return FaceUtils.rotateAsync(nf)
     
     @staticmethod
-    def rotateThree(face):
+    def rotateThree(face) -> list[str]:
         nf = FaceUtils.rotate(face)
         nff = FaceUtils.rotate(nf)
         return FaceUtils.rotate(nff)
     
     @staticmethod
-    def rotateThreeAsync(face):
+    def rotateThreeAsync(face) -> list[str]:
         nf = FaceUtils.rotateAsync(face)
         nff = FaceUtils.rotateAsync(nf)
         return FaceUtils.rotateAsync(nff)
 
     @staticmethod
-    def transfert(face):
-        nf = [None for _ in range(len(face))]
+    def transfert(face) -> list[str]:
+        nf = FaceUtils.gen_empty_face()
         for i in range(len(face)):
             nf[i] = face[i]
         return nf

@@ -1,7 +1,9 @@
 """ entry point """
-import sys;sys.dont_write_bytecode=True
+import sys
+sys.dont_write_bytecode=True
 import pygame
 
+from megaminx_solver.solver import MegaminxSolver
 from megaminx import Megaminx, MegaminxScrambler, MegaminxDrawer, Mover
 
 pygame.init()
@@ -14,6 +16,7 @@ minx = Megaminx(full=True)
 minx_drawer = MegaminxDrawer()
 minx_mover = Mover(minx_drawer, screen)
 minx_scrambler = MegaminxScrambler()
+minx_solver = MegaminxSolver(minx_mover)
 # -----------------------
 
 while True:
@@ -41,6 +44,7 @@ while True:
                 case pygame.K_SPACE: minx = minx_scrambler.getScrambledMegaminx(minx_mover, minx)
                 case pygame.K_ESCAPE: minx = Megaminx(full=True)
 
+                case pygame.K_DOLLAR: minx = minx_solver.solve(minx)
                 case pygame.K_1: minx = minx_mover.multiMove(minx, "R U R' U'")
                 case pygame.K_2: minx = minx_mover.multiMove(minx, "U R U' R'")
                 case pygame.K_3: minx = minx_mover.multiMove(minx, "R U R'")
